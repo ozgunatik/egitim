@@ -1,5 +1,10 @@
 <?php
 include 'header.php';
+$gelenVeri = $_GET['egid'];
+
+$query2 = $db->query("SELECT * FROM egitimler WHERE EGITIM_ID='{$gelenVeri}'")->fetch(PDO::FETCH_ASSOC);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +39,7 @@ include 'header.php';
               <div class="preview col-md-6">
                 
                 <div class="preview-pic tab-content">
-                  <div class="tab-pane active" id="pic-1"><img src="img/shop/unilogo.png" /></div>
+                  <div class="tab-pane active" id="pic-1"><img width="500" height="500" src="<?php echo $query2["LOGO"]; ?>" /></div>
                   <div class="tab-pane" id="pic-2"><img src="img/shop/shop-item-3.jpg" /></div>
                   <div class="tab-pane" id="pic-3"><img src="img/shop/shop-item-4.jpg" /></div>
                   <div class="tab-pane" id="pic-4"><img src="img/shop/shop-item-5.jpg" /></div>
@@ -44,7 +49,7 @@ include 'header.php';
 
               </div>
               <div class="details col-md-6">
-                <div class="prenom" style="font-size: 50px;">Eğitim Başlığı </div>
+                <div class="prenom" style="font-size: 50px;"><?php echo $query2["BASLIK"]; ?></div>
                 <div class="rating">
                   <div class="stars">
                     <span class="fa fa-star checked"></span>
@@ -59,12 +64,12 @@ include 'header.php';
 
                   </div>
                 </div>
-                <p class="product-description">Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur..</p>
+                <p class="product-description"><?php echo $query2["ACIKLAMA"]; ?></p>
 
-                <h5 class="sizes">ÜNİVERSİTE=
-                  <span class="size" data-toggle="tooltip" title="small">A</span>
+                <h5 class="sizes">Kategori =
+                  <span title="small"><?php echo $query2["KATEGORI"]; ?></span>
                 </h5>
-                <h4 class="price"> Ücret: <span>$180</span></h4>
+                <h4 class="price"> Ücret: <span><?php echo $query2["FIYAT"]; ?> TL</span> </h4>
                 <div class="action">
                 <div class="title-but"><button class="btn w-25 bg-color text-white" role="button"></i> EĞİTİME KATIL</button></div>
                 </div>
@@ -142,9 +147,7 @@ include 'header.php';
                       </div> 
                     </div>
                     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                      <p>Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur..</p>
-
-                      <p>Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur..</p>
+                      <p><?php echo $query2["ACIKLAMA"]; ?></p>
                     </div>  
                   </div>
                 </div>
@@ -239,64 +242,33 @@ include 'header.php';
           </div> 
           <div class="col-lg-12"> 
             <div class="row" style="padding: 0px">
-              <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card ">
-                  <a href="#"><img class="card-img-top" src="img/shop/unilogo.png" alt="" style=" border-radius: 25px; "></a>
-                                                                      
 
+               <?php 
+                    $digerEgitimler = $db->query("SELECT * FROM egitimler ORDER BY EGITIM_ID DESC LIMIT 4", PDO::FETCH_ASSOC);
+                      if ( $digerEgitimler->rowCount() ){
+                        foreach( $digerEgitimler as $egitimler ){
+                  ?>
+
+
+              <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card ">
+                  <a href="#"><img class="card-img-top" width="300" height="250" src="<?php echo $egitimler["LOGO"]; ?>" alt="" style=" border-radius: 25px; "></a>
                   <div class="card-body text-center">
                     <div class="card-title">
-                      <a href="#">Soft Raymond</a>
+                      <a href="#"><?php echo $egitimler["BASLIK"]; ?></a>
                     </div>
-                    <strong>$44.99</strong>
+                    <strong><?php echo $egitimler["FIYAT"]; ?> TL</strong>
                     <div class="cart-icon text-center">
-                      <a href="#"><i class="fas fa-align-center"></i> Hemen İncele</a>
+                      <a href="egitimdetay.php?egid=<?php echo $egitimler["EGITIM_ID"]; ?>"><i class="fas fa-align-center"></i> Hemen İncele</a>
                     </div>
                   </div>
                 </div>
               </div> 
-              <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card ">
-                  <a href="#"><img class="card-img-top" src="img/shop/unilogo.png" alt="" style=" border-radius: 25px; "></a>
-                  <div class="card-body text-center">
-                    <div class="card-title">
-                      <a href="#">Soft Raymond</a>
-                    </div>
-                    <strong>$44.99</strong>
-                    <div class="cart-icon text-center">
-                      <a href="#"><i class="fas fa-align-center"></i> Hemen İncele</a>
-                    </div>
-                  </div>
-                </div>
-              </div> 
-              <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card ">
-                  <a href="#"><img class="card-img-top" src="img/shop/unilogo.png" alt="" style=" border-radius: 25px; "></a>
-                  <div class="card-body text-center">
-                    <div class="card-title">
-                      <a href="#">Soft Raymond</a>
-                    </div>
-                    <strong>$44.99</strong>
-                    <div class="cart-icon text-center">
-                      <a href="#"><i class="fas fa-align-center"></i> Hemen İncele</a>
-                    </div>
-                  </div>
-                </div>
-              </div>  
-              <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card ">
-                  <a href="#"><img class="card-img-top" src="img/shop/unilogo.png" alt="" style=" border-radius: 25px; "></a>
-                  <div class="card-body text-center">
-                    <div class="card-title">
-                      <a href="#">Soft Raymond</a>
-                    </div>
-                    <strong>$44.99</strong>
-                    <div class="cart-icon text-center">
-                      <a href="#"><i class="fas fa-align-center"></i> Hemen İncele</a>
-                    </div>
-                  </div>
-                </div>
-              </div> 
+
+            <?php } } ?>
+
+
+
             </div>
           </div> 
         </div> 

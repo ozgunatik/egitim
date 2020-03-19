@@ -1,5 +1,10 @@
 <?php
 include 'header.php';
+
+$gelenVeri = $_GET["kategori"];
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -30,90 +35,33 @@ include 'header.php';
         <div class="row">
           <div class="col-lg-9"> 
             <div class="row">
+             
+              <?php 
+                  $kategoriler = $db->query("SELECT * FROM egitimler WHERE KATEGORI = '{$gelenVeri}'", PDO::FETCH_ASSOC);
+                    if ( $kategoriler->rowCount() ){
+                      foreach( $kategoriler as $kategori ){
+                ?>
+                      
+                
+              
               <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card ">
-                  <a href="#"><img class="card-img-top" src="img/shop/unilogo.png" alt=""></a>
+                  <a href="#"><img class="card-img-top" src="<?php echo $kategori["LOGO"] ?>" alt=""></a>
                   <div class="card-body text-center">
                     <div class="card-title">
-                      <a href="#">Soft Raymond</a>
+                      <h5><?php echo $kategori["BASLIK"] ?></h5>
                     </div>
-                    <strong>$44.99</strong>
+                    <strong><?php echo $kategori["FIYAT"] ?> TL</strong>
                     <div class="cart-icon text-center">
-                      <a href="egitimdetay.php"><i class="fas fa-align-center"></i> Hemen İncele</a>
-                    </div>
-                  </div>
-                </div>
-              </div> 
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card ">
-                  <a href="#"><img class="card-img-top" src="img/shop/unilogo.png" alt=""></a>
-                  <div class="card-body text-center">
-                    <div class="card-title">
-                      <a href="#">Soft Raymond</a>
-                    </div>
-                    <strong>$32.49</strong>
-                    <div class="cart-icon text-center">
-                      <a href="egitimdetay.php"><i class="fas fa-align-center"></i> Hemen İncele</a>
-                    </div>
-                  </div>
-                </div>
-              </div> 
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card ">
-                  <a href="#"><img class="card-img-top" src="img/shop/unilogo.png" alt=""></a>
-                  <div class="card-body text-center">
-                    <div class="card-title">
-                      <a href="#">Soft Raymond</a>
-                    </div>
-                    <strong>$55.22</strong>
-                    <div class="cart-icon text-center">
-                      <a href="egitimdetay.php"><i class="fas fa-align-center"></i> Hemen İncele</a>
-                    </div>
-                  </div>
-                </div>
-              </div> 
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card ">
-                  <a href="#"><img class="card-img-top" src="img/shop/unilogo.png" alt=""></a>
-                  <div class="card-body text-center">
-                    <div class="card-title">
-                      <a href="#">Soft Raymond</a>
-                    </div>
-                    <strong>$65.42</strong>
-                    <div class="cart-icon text-center">
-                      <a href="egitimdetay.php"><i class="fas fa-align-center"></i> Hemen İncele</a>
-                    </div>
-                  </div>
-                </div>
-              </div> 
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card ">
-                  <a href="#"><img class="card-img-top" src="img/shop/unilogo.png" alt=""></a>
-                  <div class="card-body text-center">
-                    <div class="card-title">
-                      <a href="#">Soft Raymond</a>
-                    </div>
-                    <strong>$23.76</strong>
-                    <div class="cart-icon text-center">
-                      <a href="egitimdetay.php"><i class="fas fa-align-center"></i> Hemen İncele</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card ">
-                  <a href="#"><img class="card-img-top" src="img/shop/unilogo.png" alt=""></a>
-                  <div class="card-body text-center">
-                    <div class="card-title">
-                      <a href="#">Soft Raymond</a>
-                    </div>
-                    <strong>$55.22</strong>
-                    <div class="cart-icon text-center">
-                      <a href="egitimdetay.php"><i class="fas fa-align-center"></i> Hemen İncele</a>
+                      <a href="egitimdetay.php?egid=<?php echo $kategori["EGITIM_ID"]; ?>"><i class="fas fa-align-center"></i> Hemen İncele</a>
                     </div>
                   </div>
                 </div>
               </div>   
+
+            <?php } } ?>
+
+
             </div>
           </div> 
         </div> 

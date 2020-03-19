@@ -39,7 +39,7 @@
                     if ( $kategoriler->rowCount() ){
                       foreach( $kategoriler as $kategori ){
                 ?>
-                        <a href="univ.php" class="list-group-item"><?php echo $kategori["KATEGORI"]; ?></a>
+                        <a href="univ.php?kategori=<?php echo $kategori["KATEGORI"] ?>" class="list-group-item"><?php echo $kategori["KATEGORI"]; ?></a>
                 
                 <?php } } ?>
               </div><br>
@@ -87,7 +87,7 @@
                       </div>
                       <strong><?php echo $row["FIYAT"]; ?> TL</strong>
                       <div class="cart-icon text-center">
-                        <a href="egitimdetay.php"><i class="fas fa-align-center"></i> Hemen İncele</a>
+                        <a href="egitimdetay.php?egid=<?php echo $row["EGITIM_ID"]; ?>"><i class="fas fa-align-center"></i> Hemen İncele</a>
                       </div>
                     </div>
                   </div>
