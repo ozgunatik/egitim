@@ -7,10 +7,10 @@ include 'header.php';
 <div class="container main">
 	<div class="row pt-5">
 		<div class="col-md-6 mx-auto text-center mt-5">
-			<form>
+			<form action="univ.php" method="GET">
 				<div class="form-group">
 					<label class="text-white font">Potansiyelini Keşfet!</label>
-					<input type="text" name="" class="form-control font" placeholder="Hangi Üniversite">
+					<input type="text" name="kategori" class="form-control font" placeholder="Hangi Kategori">
 				</div>
 				<button type="submit" class="btn font text-white formbutton"><i class="fas fa-search"></i> ARA</button>
 			</form>

@@ -1,5 +1,15 @@
 <?php
 include 'header.php';
+
+
+
+
+
+
+
+
+
+
 ?>
 
 <!--***** CONTENT *****-->   
@@ -14,33 +24,29 @@ include 'header.php';
                     <tr class="bg-info text-white">
                       <th>#</th>
                       <th>Ders Adı</th>
-                      <th>Ders Tarihi</th>
-                      <th>Durum</th>
                       <th>Ödenen Ücret</th>
                     </tr>
                   </thead>
                   <tbody>
+
+
+                     <?php 
+
+           $query4 = $db->query("SELECT * FROM egitimler INNER JOIN kurslar ON egitimler.EGITIM_ID = kurslar.EGITIM_ID WHERE kurslar.OGRENCI_MAIL = '{$email}'", PDO::FETCH_ASSOC);
+            if ( $query4->rowCount() ){
+              foreach( $query4 as $row ){
+            ?>
+
+
                     <tr>
-                      <th scope="row">1</th>
-                      <td>Ders 1</td>
-                      <td>11.01.2012</td>
-                      <td>Gönderildi</td>
-                      <td>10$</td>
+                      <th scope="row"><?php echo $row["EGITIM_ID"] ?></th>
+                      <td><?php echo $row["BASLIK"];  ?></td>
+                      
+                     
+                      <td><?php echo $row["FIYAT"];  ?> TL</td>
                     </tr>
-                    <tr class="table-danger">
-                      <th scope="row">2</th>
-                      <td>Jacob</td>
-                      <td>11.01.2012</td>
-                      <td>Onaylandı</td>
-                      <td>10$</td>
-                    </tr>
-                    <tr class="table-success">
-                      <th scope="row">3</th>
-                      <td>Mark</td>
-                      <td>11.01.2012</td>
-                      <td>Onaylandı</td>
-                      <td>10$</td>
-                    </tr>
+                   
+                   <?php } } ?>
                   </tbody>
                 </table>
             </div> 

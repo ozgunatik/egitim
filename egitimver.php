@@ -43,10 +43,7 @@ include 'header.php';
                         <div class="form-group has-warning">
                             <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
                         </div> 
-                        <div>
-                            <label class="form-control-label" for="inputSuccess1">Eğitim Tarihi</label>
-                            <input class="form-control" type="date" value="2011-08-19" id="example-date-input">                        
-                        </div>
+                       
                         <br>
                         <div class="form-group">
                                         <label for="exampleSelect1">Eğitim Bölgesi</label>

@@ -83,7 +83,7 @@
                     <a href="#"><img class="card-img-top" width="250" height="250" src="<?php echo $row["LOGO"]; ?>" alt=""></a>
                     <div class="card-body text-center">
                       <div class="card-title">
-                        <a href="#"><?php echo $row["EGITMEN_ID"]; ?></a>
+                        <a href="#"><?php echo $row["BASLIK"]; ?></a>
                       </div>
                       <strong><?php echo $row["FIYAT"]; ?> TL</strong>
                       <div class="cart-icon text-center">
