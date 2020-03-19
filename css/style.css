@@ -1,0 +1,194 @@
+
+.toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 20px; }
+.toggle.ios .toggle-handle { border-radius: 20px; }
+
+.navbar,.font{
+    font-family: 'Fira Sans', sans-serif;
+}
+.material-switch > input[type="checkbox"] {
+    display: none;   
+}
+
+.material-switch > label {
+    cursor: pointer;
+    height: 0px;
+    position: relative; 
+    width: 40px;  
+}
+
+.material-switch > label::before {
+    background: rgb(0, 0, 0);
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    content: '';
+    height: 16px;
+    margin-top: -8px;
+    position:absolute;
+    opacity: 0.3;
+    transition: all 0.4s ease-in-out;
+    width: 40px;
+}
+.material-switch > label::after {
+    background: rgb(255, 255, 255);
+    border-radius: 16px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    content: '';
+    height: 24px;
+    left: -4px;
+    margin-top: -8px;
+    position: absolute;
+    top: -4px;
+    transition: all 0.3s ease-in-out;
+    width: 24px;
+}
+.material-switch > input[type="checkbox"]:checked + label::before {
+    background: #2CC54F !important;
+    opacity: 0.5;
+}
+.material-switch > input[type="checkbox"]:checked + label::after {
+    background: #fff;
+    left: 20px;
+}
+.main{
+    background: url("../images/uzay.png");
+    background-size: cover;
+    background-position: center;
+    min-height: 650px;
+}
+.main input{
+    height: 82px;
+    border-radius: 100px;
+    font-size: 20px;
+    padding-right: 135px;
+}
+.main .formbutton{
+    position: absolute;
+    right: 20px;
+    top:40px;
+    height: 69px;
+    width: 114px;
+    border-radius: 100px;
+    background: #082B3F;
+    border:0px !important;
+}
+.text-color{
+    color:#082B3F !important;
+}
+.bg-color{
+    background-color: #082B3F !important;
+}
+.abone input{
+    height: 77px;
+    font-size: 22px;
+    border-radius: 0px !important;
+}
+.abone button{
+    height: 77px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.card{
+    border:0px;
+}
+.card-header{
+    background:transparent !important;
+    border:0px !important;
+}
+.card-header hr{
+    border-size:5px;
+    border:2px solid #F1F1F1;
+}
+.card-body ul{
+    list-style-type:none;
+}
+.card-body li{
+    margin-bottom:15px;
+}
+.custom-a{
+    text-decoration: none;
+    color:#000;
+}
+.custom-a:hover{
+    text-decoration: none;
+    color:#082B3F !important;
+}
+.font-size{
+    font-size: 14px;
+}
+.owl-nav button {
+  position: absolute;
+  top: 50%;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  transition: all 0.3s ease-in-out;
+}
+.owl-nav button.owl-prev {
+  left: 0;
+}
+.owl-nav button.owl-next {
+  right: 0;
+}
+
+.owl-dots {
+  text-align: center;
+  padding-top: 15px;
+}
+.owl-dots button.owl-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  background: #ccc;
+  margin: 0 3px;
+}
+.owl-dots button.owl-dot.active {
+  background-color: #000;
+}
+.owl-dots button.owl-dot:focus {
+  outline: none;
+}
+.owl-nav button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.38) !important;
+}
+.owl-nav span {
+    font-size: 70px;    
+    position: relative;
+    top: -5px;
+}
+.owl-nav button:focus {
+    outline: none;
+}
+.item img{
+  height: auto !important;
+  width: auto !important;
+}
+
+
+
+@media screen and (max-width:500px){
+.main input{
+    height: 60px;
+    border-radius: 100px;
+    font-size: 20px;
+    padding-right: 135px;
+}
+.main .formbutton{
+    position: absolute;
+    right: 20px;
+    top:40px;
+    height: 48px;
+    width: 114px;
+    border-radius: 100px;
+    background: #082B3F;
+    border:0px !important;
+}
+.service-h-tab .nav-tabs>a.active {
+    color: #fff;
+    border: 1px solid #2196f3;
+    background: #2196f3;
+}
+}
