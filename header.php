@@ -7,17 +7,21 @@ ob_start();
 session_start();
 
 $yetki="0";
+$email="";
 
 if (isset($_SESSION['yetki'])) {
 	 $yetki = $_SESSION["yetki"];
 }
 
-
+if (isset($_SESSION['email'])) {
+	$email = $_SESSION['email'];
+}
 
 $query = $db->query("SELECT * FROM SITE_AYAR")->fetch(PDO::FETCH_ASSOC);
-if ( $query ){
-   
-}
+$query1 = $db->query("SELECT * FROM USERS WHERE EMAIL='{$email}'")->fetch(PDO::FETCH_ASSOC);
+
+
+
 
 ?>
 
@@ -48,15 +52,12 @@ if ( $query ){
 
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav ml-auto">
-	      <li class="nav-item active">
-	        <a class="nav-link" href="register.php">Kaydol</a>
-	      </li>
+	     
 	      
 	      <li class="nav-item ml-md-3">
 	        <a class="nav-link" href="egitimler.php">Eğitimler</a>
-	      </li><li class="nav-item ml-md-3">
-	        <a class="nav-link" href="help.php">Yardım</a>
 	      </li>
+
 	    
 
 	      <?php if ($yetki == "3") 
@@ -69,7 +70,7 @@ if ( $query ){
 	        <li class="nav-item ml-md-3"></li>
 	       <a class="nav-link" href="derslerim.php">Kurslarım</a>
 	        <li class="nav-item ml-md-3"></li>
-	       <a class="nav-link" href="profile.php">Profilim</a>
+	       <a class="nav-link" href="profile.php">Profilim </a>
 	         <li class="nav-item border ml-md-3" style="border: 0.5px solid #F6F6F6 !important;"></li>
 	         <li class="nav-item ml-md-3"></li>
 	       <a class="nav-link" href="logout.php">Çıkış Yap</a>
@@ -81,7 +82,10 @@ if ( $query ){
 	       <a class="nav-link" href="login.php">Eğitim Al</a>
 	       <li class="nav-item ml-md-3"></li>
 	       <a class="nav-link" href="egitimver.php">Eğitim Ver</a>
-
+	        <li class="nav-item ml-md-3"></li>
+ 			<li class="nav-item active">
+	        <a class="nav-link" href="register.php">Kaydol</a>
+	      </li>
 	       <li class="nav-item ml-md-3">
 	        <a class="nav-link" href="login.php">Giriş</a>
 	      </li>

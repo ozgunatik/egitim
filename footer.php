@@ -21,16 +21,16 @@
 				<div class="card-header"><h3 class="text-color">Destek</h3><hr width="100" class="float-left m-0"></div>
 				<div class="card-body font">
 					<ul class="p-0">
-						<a href="#" class="custom-a"><i class=""></i> Help</a>
+						<a href="help.php" class="custom-a"><i class=""></i> Yardım</a>
 						<br>
 						<br>
-						<a href="#" class="custom-a"><i class=""></i> Contact</a>
+						<a href="#" class="custom-a"><i class=""></i> İletişim</a>
 						<br>
 						<br>
-						<a href="#" class="custom-a"><i class=""></i> FAQ</a>
+						<a href="#" class="custom-a"><i class=""></i> S.S.S</a>
 						<br>
 						<br>
-						<a href="#" class="custom-a"><i class=""></i> Linkedin</a>
+						<a href="#" class="custom-a"><i class=""></i> LinkedIn</a>
 					</ul>
 				</div>
 			</div>
@@ -40,16 +40,16 @@
 				<div class="card-header"><h3 class="text-color">Bağlantılar</h3><hr width="100" class="float-left m-0"></div>
 				<div class="card-body font">
 					<ul class="p-0">
-						<a href="#" class="custom-a"><i class=""></i> About</a>
+						<a href="#" class="custom-a"><i class=""></i> Eğitim Al</a>
 						<br>
 						<br>
-						<a href="#" class="custom-a"><i class=""></i> Linkedin</a>
+						<a href="#" class="custom-a"><i class=""></i> Eğitim Ver</a>
 						<br>
 						<br>
-						<a href="#" class="custom-a"><i class=""></i> Linkedin</a>
+						<a href="#" class="custom-a"><i class=""></i> Profil</a>
 						<br>
 						<br>
-						<a href="#" class="custom-a"><i class=""></i> Linkedin</a>
+						<a href="#" class="custom-a"><i class=""></i> Sosyal Hesaplar</a>
 					</ul>
 				</div>
 			</div>
@@ -92,9 +92,9 @@
 	</div>
 	<div class="row">
 		<div class="col font-size">
-			<a href="#" class="custom-a font border-right pr-4">Lorem Ipsum</a>
-			<a href="#" class="custom-a font border-right pl-4 pr-4">Lorem Ipsum</a>
-			<a href="#" class="custom-a font pl-4 pr-4">Lorem Ipsum</a>
+			<a href="#" class="custom-a font border-right pr-4">Telif Hakkı</a>
+			<a href="#" class="custom-a font border-right pl-4 pr-4">Gizlilik Politikası</a>
+			<a href="#" class="custom-a font pl-4 pr-4">İletişim</a>
 		</div>
 	</div>
 </div>

@@ -71,17 +71,20 @@ $query2 = $db->query("SELECT * FROM egitimler WHERE EGITIM_ID='{$gelenVeri}'")->
                 </h5>
                 <h4 class="price"> Ücret: <span><?php echo $query2["FIYAT"]; ?> TL</span> </h4>
                 <div class="action">
-                <div class="title-but"><button class="btn w-25 bg-color text-white" role="button"></i> EĞİTİME KATIL</button></div>
+                <div class="title-but">
+                  
+                  <a href="nedmin/kurs-kayit.php?gelen=<?php echo $gelenVeri; ?>&user=<?php echo $email; ?>"> <button class="btn w-25 bg-color text-white" role="button"></i> EĞİTİME KATIL</button></a>
+                </div>
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="service-h-tab"> 
                   <nav class="nav nav-tabs" id="myTab" role="tablist">
-                    <a class="btn w-25 bg-color text-white" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">Yorumlar</a>
+                    <!--<a class="btn w-25 bg-color text-white" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">Yorumlar</a>-->
                     <a class="btn w-25 bg-color text-white"  id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile">Detaylar</a> 
                   </nav>
                   <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"> 
+                   <!-- <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"> 
                       <div class="review-block">
                         <div class="row">
                           <div class=" col-sm-3">
@@ -145,7 +148,7 @@ $query2 = $db->query("SELECT * FROM egitimler WHERE EGITIM_ID='{$gelenVeri}'")->
                           </div>
                         </div> 
                       </div> 
-                    </div>
+                    </div>-->
                     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                       <p><?php echo $query2["ACIKLAMA"]; ?></p>
                     </div>  

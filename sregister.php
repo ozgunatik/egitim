@@ -35,164 +35,84 @@ include 'header.php';
                           <br>
                             <h3><i class="fa fa-user-circle"></i> Kayıt Ol</h3>
                         </div>
-                        <form>
+                        <form action="nedmin/kayit-islem.php" method="POST">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="name">Adı Soyadı</label>
-                                        <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name">
+                                        <input type="text" class="form-control" name="username" placeholder="Ad Soyad">
                                     </div>
                                     <div class="form-group">
                                         <label for="email">E-mail adresi</label>
-                                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                                        <input type="email" class="form-control" name="email"  placeholder="Mail Adresi">
                                     </div>
-                                    <div class="form-group">
-                                        <label class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" required>
-                                            <span class="custom-control-indicator"></span>
-                                            <span class="custom-control-description">Üye Olarak Şartlar ve Koşulları Kabul Etmiş Sayılırsınız</span>
-                                        </label> 
+                                     <div class="form-group">
+                                        <label for="email">Şifre</label>
+                                        <input type="password" class="form-control" name="password" placeholder="Mail Adresi">
                                     </div>
+                                    
+                                    
                                 </div>
                                 <div class="col-md-6"> 
                                     <div class="form-group">
                                         <label for="cont-number">Telefon Numarası</label>
-                                        <input type="email" class="form-control" id="cont-number" aria-describedby="emailHelp" placeholder="Enter Number">
+                                        <input type="text" class="form-control" name="tel" placeholder="Telefon Numarası">
                                     </div> 
 
                                     <div class="form-group">
                                         <label for="exampleSelect1">Üyelik Türü</label>
-                                        <select class="form-control" id="exampleSelect1">
-                                            <option value="">Üyelik Türü</option>
-                                            <option value="AR">Eğitmen</option>
-                                            <option value="AU">Öğrenci</option>
+                                        <select class="form-control" id="uyelik" name="uyelik">
+                                            <option value="">Üyelik Türünü Seçin</option>
+                                            <option value="4">Eğitmen</option>
+                                            <option value="3">Öğrenci</option>
                                         </select>
-                                    </div>  
+                                    </div>
+
+                                     <div class="form-group">
+                                        <label for="email">Üniversite</label>
+                                        <input type="text" class="form-control" name="university" placeholder="Üniversite">
+                                    </div>
+
+                                   
                                 </div>
                             </div> 
                             <div class="row mt-3">
                                 <div class="col-md-12">
-                                    <h4 style="border-bottom: 1px solid #ddd; padding-bottom: 7px; color:#555;">Address</h4>
+                                    <h4 style="border-bottom: 1px solid #ddd; padding-bottom: 7px; color:#555;">Adres</h4>
                                 </div>
                             </div>
                             <div class="row mt-4">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="street">Cadde</label>
-                                        <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter Street Address">
+                                        <label for="street">Adres</label>
+                                        <input type="text" class="form-control" name="adres" placeholder="Adres">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="city">Şehir</label>
-                                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter City">
+                                        <label for="city">İl</label>
+                                        <input type="text" class="form-control" name="il" placeholder="İl">
                                     </div> 
                                     <div class="form-group">
                                         <label for="post-code">Posta Kodu</label>
-                                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Post Code">
+                                        <input type="text" class="form-control" name="postakodu" placeholder="Posta Kodu">
                                     </div> 
                                 </div>
                                 <div class="col-md-6"> 
                                     <div class="form-group">
-                                        <label for="state">Sokak</label>
-                                        <input type="email" class="form-control" id="cont-number" aria-describedby="emailHelp" placeholder="Enter State">
+                                        <label for="state">İlçe</label>
+                                        <input type="text" class="form-control" name="ilce" placeholder="İlçe">
                                     </div> 
 
                                     <div class="form-group">
                                         <label for="exampleSelect1">Ülke Seçin</label>
-                                        <select class="form-control" id="exampleSelect1">
-                                            <option value="">Select Your Country</option>
-                                            <option value="AR">Argentina</option>
+                                        <select class="form-control" name="ulke" id="ulke">
+                                            <option value="">Ülke Seç</option>
+                                            <option value="TR">Türkiye</option>
                                             <option value="AU">Australia</option>
                                             <option value="AT">Austria</option>
                                             <option value="BY">Belarus</option>
-                                            <option value="BE">Belgium</option>
-                                            <option value="BA">Bosnia and Herzegovina</option>
-                                            <option value="BR">Brazil</option>
-                                            <option value="BG">Bulgaria</option>
-                                            <option value="CA">Canada</option>
-                                            <option value="CL">Chile</option>
-                                            <option value="CN">China</option>
-                                            <option value="CO">Colombia</option>
-                                            <option value="CR">Costa Rica</option>
-                                            <option value="HR">Croatia</option>
-                                            <option value="CU">Cuba</option>
-                                            <option value="CY">Cyprus</option>
-                                            <option value="CZ">Czech Republic</option>
-                                            <option value="DK">Denmark</option>
-                                            <option value="DO">Dominican Republic</option>
-                                            <option value="EG">Egypt</option>
-                                            <option value="EE">Estonia</option>
-                                            <option value="FI">Finland</option>
-                                            <option value="FR">France</option>
-                                            <option value="GE">Georgia</option>
-                                            <option value="DE">Germany</option>
-                                            <option value="GI">Gibraltar</option>
-                                            <option value="GR">Greece</option>
-                                            <option value="HK">Hong Kong S.A.R., China</option>
-                                            <option value="HU">Hungary</option>
-                                            <option value="IS">Iceland</option>
-                                            <option value="IN">India</option>
-                                            <option value="ID">Indonesia</option>
-                                            <option value="IR">Iran</option>
-                                            <option value="IQ">Iraq</option>
-                                            <option value="IE">Ireland</option>
-                                            <option value="IL">Israel</option>
-                                            <option value="IT">Italy</option>
-                                            <option value="JM">Jamaica</option>
-                                            <option value="JP">Japan</option>
-                                            <option value="KZ">Kazakhstan</option>
-                                            <option value="KW">Kuwait</option>
-                                            <option value="KG">Kyrgyzstan</option>
-                                            <option value="LA">Laos</option>
-                                            <option value="LV">Latvia</option>
-                                            <option value="LB">Lebanon</option>
-                                            <option value="LT">Lithuania</option>
-                                            <option value="LU">Luxembourg</option>
-                                            <option value="MK">Macedonia</option>
-                                            <option value="MY">Malaysia</option>
-                                            <option value="MT">Malta</option>
-                                            <option value="MX">Mexico</option>
-                                            <option value="MD">Moldova</option>
-                                            <option value="MC">Monaco</option>
-                                            <option value="ME">Montenegro</option>
-                                            <option value="MA">Morocco</option>
-                                            <option value="NL">Netherlands</option>
-                                            <option value="NZ">New Zealand</option>
-                                            <option value="NI">Nicaragua</option>
-                                            <option value="KP">North Korea</option>
-                                            <option value="NO">Norway</option>
-                                            <option value="PK">Pakistan</option>
-                                            <option value="PS">Palestinian Territory</option>
-                                            <option value="PE">Peru</option>
-                                            <option value="PH">Philippines</option>
-                                            <option value="PL">Poland</option>
-                                            <option value="PT">Portugal</option>
-                                            <option value="PR">Puerto Rico</option>
-                                            <option value="QA">Qatar</option>
-                                            <option value="RO">Romania</option>
-                                            <option value="RU">Russia</option>
-                                            <option value="SA">Saudi Arabia</option>
-                                            <option value="RS">Serbia</option>
-                                            <option value="SG">Singapore</option>
-                                            <option value="SK">Slovakia</option>
-                                            <option value="SI">Slovenia</option>
-                                            <option value="ZA">South Africa</option>
-                                            <option value="KR">South Korea</option>
-                                            <option value="ES">Spain</option>
-                                            <option value="LK">Sri Lanka</option>
-                                            <option value="SE">Sweden</option>
-                                            <option value="CH">Switzerland</option>
-                                            <option value="TW">Taiwan</option>
-                                            <option value="TH">Thailand</option>
-                                            <option value="TN">Tunisia</option>
-                                            <option value="TR">Turkey</option>
-                                            <option value="UA">Ukraine</option>
-                                            <option value="AE">United Arab Emirates</option>
-                                            <option value="GB">United Kingdom</option>
-                                            <option value="US">USA</option>
-                                            <option value="UZ">Uzbekistan</option>
-                                            <option value="VN">Vietnam</option>
+                                          
                                         </select>
                                     </div>  
                                     <div>
@@ -204,11 +124,11 @@ include 'header.php';
                                <label class="form-control-label" for="inputSuccess1">Kendinizden Bahsedin</label>
                             	<small class="form-text text-muted"></small>
                                 <div class="form-group has-warning">
-                            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                            <textarea class="form-control" name="aciklama" rows="3"></textarea>
                         </div>
                               <div class="col-md-12 eigth-button mt-5">
                                   
-                                  <a href="https://twitter.com/Dave_Conner" class="btn btn-23">Kayıt Ol</a>
+                                  <button type="submit" name="kayitol" class="btn btn-23">Kayıt Ol</button>
                               </div>
                         </form>
                     </div>

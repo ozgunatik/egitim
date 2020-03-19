@@ -4,12 +4,16 @@ ob_start();
 session_start();
 
 include 'baglan.php';
+error_reporting(0);
 
 //LOGİN.PHP Güncelleme İşlemi
-$email = $_POST['email'];
-$password = md5($_POST['password']);
+
 
 if (isset($_POST['uyelik'])) {
+
+
+$email = $_POST['email'];
+$password = md5($_POST['password']);
 
 $yetkiOgren = $db->query("SELECT * FROM USERS where EMAIL='$email' and PASSWORD='$password'")->fetch(PDO::FETCH_ASSOC);
 $yetki = $yetkiOgren['YETKI'];
@@ -28,12 +32,16 @@ $_SESSION['yetki'] = $yetki;
 		header("Location:../profile.php?tur=$email&yet=$yetki");
 	}
 
-
- 
 }else{
 echo "Kullanıcı Adı ve Şifre Yanlış. Lütfen Tekrar Kontrol Edin!";
+	}
 }
-}
+
+
+	
+
+
+
 
 // SON
 

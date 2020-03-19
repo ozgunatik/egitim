@@ -33,29 +33,17 @@ include 'header.php';
                         </div>
                         <div class="info">
                             <div class="title">
-                                <a target="_blank" href="#">Steena Ben</a>
+                                <a><?php echo $query1["ADSOYAD"]; ?></a>
                             </div>
-                            <div class="desc">steena@gmail.com</div> 
+                            <div class="desc"><?php echo $query1["EMAIL"]; ?></div> 
                             <hr>
                         </div>
                         <nav class="nav text-center prof-nav">
                             <ul  class="list-unstyled ">
-                                <li><a href="login.html">Çıkış Yap</a></li> 
+                                <li><a href="logout.php">Çıkış Yap</a></li> 
                             </ul>
                         </nav>
-                        <div class="bottom">
-                            <a class="btn btn-info btn-twitter btn-sm" href="#">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                            <a class="btn btn-danger btn-sm" rel="publisher"
-                               href="#">
-                                <i class="fa fa-google-plus"></i>
-                            </a>
-                            <a class="btn btn-primary btn-sm" rel="publisher"
-                               href="#">
-                                <i class="fa fa-facebook"></i>
-                            </a> 
-                        </div>
+                        
                     </div>
                 </div>
                 <div class="col-md-9">
@@ -69,39 +57,31 @@ include 'header.php';
                                 <a class="nav-link" href="#buzz" role="tab" data-toggle="tab"><span><i class="fa fa-inbox"></i></span> Inbox</a>
                               </li>
 
-                              <li class="nav-item">
-                                <a class="nav-link" href="#references" role="tab" data-toggle="tab"><span><i class="fa fa-cog"></i></span> Setting</a>
-                              </li>
+                             
                             </ul>
 
                             <!-- Tab panes -->
                             <div class="tab-content tabs">
                               <div role="tabpanel" class="tab-pane fade show active" id="profile">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec urna aliquam, ornare eros vel, malesuada lorem. Nullam faucibus lorem at eros consectetur lobortis. Maecenas nec nibh congue, placerat sem id, rutrum velit. </p> 
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec urna aliquam, ornare eros vel, malesuada lorem. Nullam faucibus lorem at eros consectetur lobortis. Maecenas nec nibh congue, placerat sem id, rutrum velit. </p>                        
+                                    <?php echo $query1["ACIKLAMA"]; ?>                      
                                     <div class="row mt-3">
-                                        <h5 class="col-12 mb-2">User Info</h5>
+                                        <h5 class="col-12 mb-2">Kullanıcı Bilgileri</h5>
                                         <div class="col-6">
                                             <div class="form-group">
-                                                <strong class="mr-5"><i class="fa fa-envelope"> E-mail: </i></strong>    steena@gmail.com
+                                                <strong class="mr-5"><i class="fa fa-envelope"> E-mail : </i></strong><?php echo $query1["EMAIL"]; ?>
                                             </div>
                                             <div class="form-group">
-                                                <strong class="mr-5"><i class="fa fa-phone"> Phone: </i></strong>   +91 1233 45 5678
+                                                <strong class="mr-5"><i class="fa fa-phone"> Telefon : </i></strong><?php echo $query1["TEL"]; ?>
                                             </div>
                                             <div class="form-group">
-                                                <strong class="mr-5"><i class="fa fa-map"> City: </i></strong>    New York
-                                            </div> 
+                                                <strong class="mr-5"><i class="fa fa-map"> İl : </i></strong><?php echo $query1["IL"]; ?></div> 
                                         </div>
                                         <div class="col-6">
                                             <div class="form-group">
-                                                <strong class="mr-5"><i class="fa fa-globe"> Country: </i></strong>    steena@gmail.com
-                                            </div>
+                                                <strong class="mr-5"><i class="fa fa-globe"> Ülke : </i></strong><?php echo $query1["ULKE"]; ?></div>
                                             <div class="form-group">
-                                                <strong class="mr-5"><i class="fa fa-map-marker"> Address: </i></strong>   25, Dist town Street, Logn California
-                                            </div>
-                                            <div class="form-group">
-                                                <strong class="mr-5"><i class="fa fa-map-marker"> Sokak: </i></strong>   sokak
-                                            </div> 
+                                                <strong class="mr-5"><i class="fa fa-map-marker"> Adres : </i></strong><?php echo $query1["ADRES"]; ?></div>
+                                            
                                         </div>
                                     </div>
                               </div>
@@ -129,7 +109,7 @@ include 'header.php';
                                                                 Mesaj İçeriği
                                                             </div>
                                                             <a  href="#" class="btn btn-sm btn-hover btn-primary" href="#reply" ><span class="fa fa-comments" style="padding-right:3px;"></span></a>
-                                                            <a href="#" class="btn btn-sm btn-hover btn-danger"><span class="fa fa-remove" style="padding-right:3px;"></span></a>
+                                                           
                                                         </div>
                                                     </div>
                                                 </li>
@@ -150,7 +130,7 @@ include 'header.php';
                                                                 Mesaj içeriği
                                                             </div>
                                                             <a  href="#" class="btn btn-sm btn-hover btn-primary" href="#reply" ><span class="fa fa-comments" style="padding-right:3px;"></span></a>
-                                                            <a href="#" class="btn btn-sm btn-hover btn-danger"><span class="fa fa-remove" style="padding-right:3px;"></span></a>                                                                     
+                                                                                                                                
                                                         </div>
                                                     </div>
                                                 </li>
@@ -158,48 +138,7 @@ include 'header.php';
                                         </div>
                                     </div>
                               </div>
-                              <div role="tabpanel" class="tab-pane fade" id="references">
-                                    <div class="row mx-2">
-                                        <div class="col-md-12 panel-heading">
-                                            <h3 class="panel-title"><i class="fa fa-comment"></i> Edit Info</h3><br>
-                                        </div>
-                                        <div class="col-md-6 ">
-                                            <div class="form-group row">
-                                                <label for="example-text-input" style="width: 85px;" class=" col-form-label">Name</label>
-                                                <div class="col-9">
-                                                    <input class="form-control" type="text" value="Steena Ben" id="example-text-input">
-                                                </div>
-                                            </div> 
-                                            <div class="form-group row">
-                                                <label for="example-email-input" style="width: 85px;" class=" col-form-label">Email</label>
-                                                <div class="col-9">
-                                                    <input class="form-control" type="email" value="steena@gmail.com" id="example-email-input">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="example-url-input" style="width: 85px;" class=" col-form-label">URL</label>
-                                                <div class="col-9">
-                                                    <input class="form-control" type="url" value="www.Businessbox.com" id="example-url-input">
-                                                </div>
-                                            </div>   
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group row">
-                                                <label for="example-date-input" style="width: 85px;" class=" col-form-label">Hire Date</label>
-                                                <div class="col-9">
-                                                    <input class="form-control" type="date" value="2018-08-19" id="example-date-input">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="example-tel-input" style="width: 85px;" class=" col-form-label">Telephone</label>
-                                                <div class="col-9">
-                                                    <input class="form-control" type="tel" value="+91-(555)-555-5555" id="example-tel-input">
-                                                </div>
-                                            </div>
-                                            </div>
-                                            <a href="#" class="btn w-25 bg-color text-white">Bilgileri Düzenle</a>
-                                      </div>                                            
-                                        </div>
+                             
                                     </div> 
                               </div>
                             </div>
