@@ -1,10 +1,41 @@
 <?php
 
+include '../nedmin/baglan.php';
+ini_set('mssql.charset', 'UTF-8');
 
 ob_start();
 session_start();
 
- $yetki = $_SESSION["yetki"]; ?>
+$yetki="0";
+$email="";
+
+if (isset($_SESSION['yetki'])) {
+     $yetki = $_SESSION["yetki"];
+}
+
+if (isset($_SESSION['email'])) {
+    $email = $_SESSION["email"];
+    $query3 = $db->query("SELECT * FROM users WHERE EMAIL='{$email}'")->fetch(PDO::FETCH_ASSOC);
+
+}
+
+$del = $db->prepare('SELECT * FROM users WHERE YETKI="4"');
+$del->execute();
+$count = $del->rowCount();
+
+$del1 = $db->prepare('SELECT * FROM users WHERE YETKI="3"');
+$del1->execute();
+$count1 = $del1->rowCount();
+
+$del2 = $db->prepare('SELECT KATEGORI FROM egitimler GROUP BY KATEGORI');
+$del2->execute();
+$count2 = $del2->rowCount();
+
+$del3 = $db->prepare('SELECT BASLIK FROM egitimler GROUP BY BASLIK');
+$del3->execute();
+$count3 = $del3->rowCount();
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -73,7 +104,7 @@ session_start();
                                 <a rel="nofollow" href="#" class="dropdown-item d-flex">
                                     <div class="msg-profile"> <img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
                                     <div class="msg-body">
-                                        <h3 class="h5">Steena Ben</h3><span>steenaben@Businessbox.com</span>
+                                        <h3 class="h5"><?php echo $query3["ADSOYAD"]; ?> </h3><span><?php echo $query3["EMAIL"]; ?> </span>
                                     </div>
                                 </a>
                                 <hr>

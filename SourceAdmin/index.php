@@ -16,7 +16,7 @@
                     <div class="card">
                         <div class="card-block">
                             <div class="text-left report1-cont">
-                                <h2 class="font-light m-b-0"><i class="fa fa-graduation-cap" aria-hidden="true"></i> 15</h2>
+                                <h2 class="font-light m-b-0"><i class="fa fa-graduation-cap" aria-hidden="true"></i> <?php echo $count; ?></h2>
                                 <span class="text-muted"> Kayıtlı Eğitmen</span>
                             </div>                         
                         </div>
@@ -26,7 +26,7 @@
                     <div class="card">
                         <div class="card-block">
                             <div class="text-left report1-cont">
-                                <h2 class="font-light m-b-0"><i class="fa fa-user" aria-hidden="true"></i> 5</h2>
+                                <h2 class="font-light m-b-0"><i class="fa fa-user" aria-hidden="true"></i> <?php echo $count1; ?></h2>
                                 <span class="text-muted">Kayıtlı Öğrenci</span>
                             </div>
                         </div>
@@ -36,7 +36,7 @@
                     <div class="card">
                         <div class="card-block"> 
                             <div class="text-left report1-cont">
-                                <h2 class="font-light m-b-0"><i class="fa fa-list-alt" aria-hidden="true"></i> 10</h2>
+                                <h2 class="font-light m-b-0"><i class="fa fa-list-alt" aria-hidden="true"></i> <?php echo $count2; ?></h2>
                                 <span class="text-muted">Kayıtlı Kategori </span>
                             </div>
                         </div>
@@ -46,7 +46,7 @@
                     <div class="card">
                         <div class="card-block"> 
                             <div class="text-left report1-cont">
-                                <h2 class="font-light m-b-0"><i class="fa fa-play" aria-hidden="true"></i> 11</h2>
+                                <h2 class="font-light m-b-0"><i class="fa fa-play" aria-hidden="true"></i> <?php echo $count3; ?></h2>
                                 <span class="text-muted">Kayıtlı Eğitim</span>
                             </div>
                         </div>
@@ -66,55 +66,36 @@
                     <tr class="bg-info text-white">
                       <th>ID</th>
                       <th>Adı Soyadı</th>
-                      <th>Kullanıcı Adı</th>
+                      <th>Telefon</th>
                       <th>Mail Adresi</th>
                       <th>İşlemler</th>
                     </tr>
                   </thead>
                   <tbody>
+
+                <?php 
+                  $ogrenciler = $db->query("SELECT * FROM users WHERE YETKI='3'", PDO::FETCH_ASSOC);
+                    if ( $ogrenciler->rowCount() ){
+                      foreach( $ogrenciler as $ogrenci ){
+                ?>
+
                     <tr>
-                      <th scope="row">1</th>
-                      <td>Özgün ATİK</td>
-                      <td>@ozgunatik</td>
-                      <td>ozgunatik97@gmail.com</td>
+                      <th scope="row"><?php echo $ogrenci["ID"]; ?></th>
+                      <td><?php echo $ogrenci["ADSOYAD"]; ?></td>
+                      <td><?php echo $ogrenci["TEL"]; ?></td>
+                      <td><?php echo $ogrenci["EMAIL"]; ?></td>
                       <td>
-                      	<a href="#"><button class="btn btn-primary btn-sm" type="button">Düzenle</button></a>
+                      	<a href="ogrenci-ekle.php?id=<?php echo $ogrenci["ID"]; ?>"><button class="btn btn-primary btn-sm" type="button">Düzenle</button></a>
                       	<a href="#"><button class="btn btn-danger btn-sm" type="button">Sil</button></a>
                       </td>
                     </tr>
 
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Barış BADEMCİ</td>
-                      <td>@barisbademci</td>
-                      <td>barisbdi@gmail.com</td>
-                      <td>
-                      	<a href="#"><button class="btn btn-primary btn-sm" type="button">Düzenle</button></a>
-                      	<a href="#"><button class="btn btn-danger btn-sm" type="button">Sil</button></a>
-                      </td>
-                    </tr>
+                  <?php } } ?>
 
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Hasan BULUT</td>
-                      <td>@hasanbulut</td>
-                      <td>hasanbulut@gmail.com</td>
-                      <td>
-                      	<a href="#"><button class="btn btn-primary btn-sm" type="button">Düzenle</button></a>
-                      	<a href="#"><button class="btn btn-danger btn-sm" type="button">Sil</button></a>
-                      </td>
-                    </tr>
+                   
+                   
 
-                    <tr>
-                      <th scope="row">4</th>
-                      <td>Ulaş NAYAN</td>
-                      <td>@ulasnayan</td>
-                      <td>ulasnayan@gmail.com</td>
-                      <td>
-                      	<a href="#"><button class="btn btn-primary btn-sm" type="button">Düzenle</button></a>
-                      	<a href="#"><button class="btn btn-danger btn-sm" type="button">Sil</button></a>
-                      </td>
-                    </tr>
+                
                  
                    
                   </tbody>

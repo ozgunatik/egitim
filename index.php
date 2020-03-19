@@ -9,7 +9,7 @@ include 'header.php';
 		<div class="col-md-6 mx-auto text-center mt-5">
 			<form action="univ.php" method="GET">
 				<div class="form-group">
-					<label class="text-white font">Potansiyelini Keşfet!</label>
+					<label class="text-white font"> <?php echo $query3["ADSOYAD"]; ?> Potansiyelini Keşfet!</label>
 					<input type="text" name="kategori" class="form-control font" placeholder="Hangi Kategori">
 				</div>
 				<button type="submit" class="btn font text-white formbutton"><i class="fas fa-search"></i> ARA</button>

@@ -9,69 +9,44 @@
 
         <div class="content-inner">
            <div class="content chart-cont">  
+            <!--***** CONTENT *****-->     
             <div class="row">
-            	<h3>Eğitmenler | 
-            		<a href="egitmen-ekle.php"><button class="btn btn-success btn-sm" type="button">Eğitmen Ekle</button></a>
-            	</h3>
+              <h3>Eğitmenler | </h3>
                 <table class="table table-hover">
                   <thead>
                     <tr class="bg-info text-white">
                       <th>ID</th>
                       <th>Adı Soyadı</th>
-                      <th>Kullanıcı Adı</th>
+                      <th>Telefon</th>
                       <th>Mail Adresi</th>
-                      <th>Kategori</th>
                       <th>İşlemler</th>
                     </tr>
                   </thead>
                   <tbody>
+
+                <?php 
+                  $ogrenciler = $db->query("SELECT * FROM users WHERE YETKI='4'", PDO::FETCH_ASSOC);
+                    if ( $ogrenciler->rowCount() ){
+                      foreach( $ogrenciler as $ogrenci ){
+                ?>
+
                     <tr>
-                      <th scope="row">1</th>
-                      <td>Özgün ATİK</td>
-                      <td>@ozgunatik</td>
-                      <td>ozgunatik97@gmail.com</td>
-                      <td>Yazılım</td>
+                      <th scope="row"><?php echo $ogrenci["ID"]; ?></th>
+                      <td><?php echo $ogrenci["ADSOYAD"]; ?></td>
+                      <td><?php echo $ogrenci["TEL"]; ?></td>
+                      <td><?php echo $ogrenci["EMAIL"]; ?></td>
                       <td>
-                      	<a href="#"><button class="btn btn-primary btn-sm" type="button">Düzenle</button></a>
-                      	<a href="#"><button class="btn btn-danger btn-sm" type="button">Sil</button></a>
+                        <a href="egitmen-ekle.php?id=<?php echo $ogrenci["ID"]; ?>"><button class="btn btn-primary btn-sm" type="button">Düzenle</button></a>
+                        <a href="egitmen-sil.php?id=<?php echo $ogrenci["ID"]; ?>"><button class="btn btn-danger btn-sm" type="button">Sil</button></a>
                       </td>
                     </tr>
 
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Barış BADEMCİ</td>
-                      <td>@barisbademci</td>
-                      <td>barisbdi@gmail.com</td>
-                      <td>Muhasebe</td>
-                      <td>
-                      	<a href="#"><button class="btn btn-primary btn-sm" type="button">Düzenle</button></a>
-                      	<a href="#"><button class="btn btn-danger btn-sm" type="button">Sil</button></a>
-                      </td>
-                    </tr>
+                  <?php } } ?>
 
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Hasan BULUT</td>
-                      <td>@hasanbulut</td>
-                      <td>hasanbulut@gmail.com</td>
-                      <td>İşletme</td>
-                      <td>
-                      	<a href="#"><button class="btn btn-primary btn-sm" type="button">Düzenle</button></a>
-                      	<a href="#"><button class="btn btn-danger btn-sm" type="button">Sil</button></a>
-                      </td>
-                    </tr>
+                   
+                   
 
-                    <tr>
-                      <th scope="row">4</th>
-                      <td>Ulaş NAYAN</td>
-                      <td>@ulasnayan</td>
-                      <td>ulasnayan@gmail.com</td>
-                      <td>Ekonomi</td>
-                      <td>
-                      	<a href="#"><button class="btn btn-primary btn-sm" type="button">Düzenle</button></a>
-                      	<a href="#"><button class="btn btn-danger btn-sm" type="button">Sil</button></a>
-                      </td>
-                    </tr>
+                
                  
                    
                   </tbody>

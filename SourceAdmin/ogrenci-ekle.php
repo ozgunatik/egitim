@@ -1,4 +1,13 @@
-<?php include 'header.php';  ?>
+<?php include 'header.php'; 
+
+if (isset($_GET["id"])) {
+   
+   $query1 = $db->query("SELECT * FROM USERS WHERE ID='{$_GET["id"]}'")->fetch(PDO::FETCH_ASSOC);
+
+}
+
+
+ ?>
 
 <!--====================================================
                         PAGE CONTENT
@@ -25,29 +34,45 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="name">Ad Soyad</label>
-                                        <input type="text" class="form-control" id="name" placeholder="Ad Soyad Giriniz">
+                                        <input type="text" class="form-control" name="name" value="<?php 
+                                            if (isset($_GET["id"])) {
+   
+                                            echo $query1["ADSOYAD"];
+
+                                                } ?>" placeholder="Ad Soyad Giriniz">
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Email Adresi</label>
-                                        <input type="email" class="form-control" id="email"  placeholder="Email Adresi Giriniz">
+                                        <input type="email" class="form-control" name="email" value="<?php 
+                                            if (isset($_GET["id"])) {
+   
+                                            echo $query1["EMAIL"];
+
+                                                } ?>"  placeholder="Email Adresi Giriniz">
                                     </div>
 
-                                      <div class="form-group">
-                                        <label for="exampleInputFile">Profil Fotoğrafı</label>
-                                        <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-                                        
-                                    </div>
+                                     
                                    
                                 </div>
                                 <div class="col-md-6"> 
                                     <div class="form-group">
-                                        <label for="cont-number">Kullanıcı Adı</label>
-                                        <input type="text" class="form-control" id="cont-number" placeholder="Kullanıcı Adı Giriniz">
+                                        <label for="cont-number">Şifre</label>
+                                        <input type="text" class="form-control" name="username" value="<?php 
+                                            if (isset($_GET["id"])) {
+   
+                                            echo "**********";
+
+                                                } ?>" placeholder="Kullanıcı Adı Giriniz">
                                     </div> 
 
                                     <div class="form-group has-success">
-                                        <label for="website">Şifre</label>
-                                        <input type="password" class="form-control" id="website" placeholder="Şifre Giriniz">
+                                        <label for="website">Telefon</label>
+                                        <input type="text" class="form-control" name="tel" value="<?php 
+                                            if (isset($_GET["id"])) {
+   
+                                            echo $query1["TEL"];
+
+                                                } ?>" placeholder="Şifre Giriniz">
                                     </div>  
                                 </div>
                             </div> 
@@ -60,32 +85,56 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="street">Cadde - Sokak - Apartman</label>
-                                        <input type="text" class="form-control" id="name" placeholder="Adres Girin">
+                                        <input type="text" class="form-control" name="adres" value="<?php 
+                                            if (isset($_GET["id"])) {
+   
+                                            echo $query1["ADRES"];
+
+                                                } ?>" placeholder="Adres Girin">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="city">İl</label>
-                                        <input type="text" class="form-control" id="email" placeholder="İl Giriniz">
+                                        <input type="text" class="form-control" name="il" value="<?php 
+                                            if (isset($_GET["id"])) {
+   
+                                            echo $query1["IL"];
+
+                                                } ?>" placeholder="İl Giriniz">
                                     </div> 
                                     <div class="form-group">
                                         <label for="post-code">Posta Kodu</label>
-                                        <input type="text" class="form-control" id="email" placeholder="Posta Kodu Giriniz">
-                                    </div> 
+                                        <input type="text" class="form-control" name="postakodu" value="<?php 
+                                            if (isset($_GET["id"])) {
+   
+                                            echo $query1["POSTAKODU"];
+
+                                                } ?>" placeholder="Posta Kodu Giriniz">
+                                    </div>  
                                 </div>
                                 <div class="col-md-6"> 
                                     <div class="form-group">
                                         <label for="state">İlçe</label>
-                                        <input type="text" class="form-control" id="cont-number" placeholder="İlçe Giriniz">
+                                        <input type="text" class="form-control" name="ilce" value="<?php 
+                                            if (isset($_GET["id"])) {
+   
+                                            echo $query1["ILCE"];
+
+                                                } ?>" placeholder="İlçe Giriniz">
                                     </div> 
 
                                     <div class="form-group">
                                         <label for="exampleSelect1">Ülke </label>
-                                        <select class="form-control" id="exampleSelect1">
-                                            <option value="">Ülke Seçin</option>
-                                            <option value="TR">Türkiye</option>
-                                            <option value="BG">Belçika</option>
-                                            <option value="HO">Hollanda</option>                                           
+                                        <select class="form-control" id="ulke">
+                                            <option value="<?php 
+                                            if (isset($_GET["id"])) {
+   
+                                            echo $query1["ULKE"];
+
+                                                } ?>">Türkiye</option>
+                                                <option>Belçika</option>
+                                                                                     
                                         </select>
                                     </div>  
                                 </div>
@@ -99,7 +148,12 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="name">Üniversite Adı</label>
-                                        <input type="text" class="form-control" id="name" placeholder="Üniversite Adı Giriniz">
+                                        <input type="text" class="form-control" name="universite" value="<?php 
+                                            if (isset($_GET["id"])) {
+   
+                                            echo $query1["UNIVERSITE"];
+
+                                                } ?>" placeholder="Üniversite Adı Giriniz">
                                     </div>
                                     <div class="form-group">
                                         <label for="pro-qu">Okuduğunuz Bölüm</label>
@@ -110,13 +164,29 @@
 
                                     <div class="form-group has-success">
                                         <label for="description">Açıklama</label>
-                                        <textarea name="description" class="form-control" id="description" cols="30" rows="5"></textarea> 
+                                        <textarea name="description" class="form-control" name="aciklama"  cols="30" rows="5"><?php 
+                                            if (isset($_GET["id"])) {
+   
+                                            echo $query1["ADSOYAD"];
+
+                                                } ?> </textarea> 
                                         
                                     </div>  
                                 </div>
                             </div>  
                            
-                            <button type="submit" class="btn btn-general btn-blue mr-2">Kaydet</button>  
+                            
+                            <?php 
+
+                            if (isset($_GET["id"])) {
+   ?>
+  <button type="submit" class="btn btn-general btn-blue mr-2">Güncelle</button>  
+
+                          <?php } else {  ?>  
+
+<button type="submit" class="btn btn-general btn-blue mr-2">Kaydet</button>  
+
+<?php } ?>
                            
                         </form>
                     </div>

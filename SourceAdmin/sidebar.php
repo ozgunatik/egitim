@@ -4,7 +4,7 @@
             <div class="sidebar-header d-flex align-items-center">
                 <div class="avatar"><img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
                 <div class="title">
-                    <h1 class="h4">Özgün ATİK</h1>
+                    <h1 class="h4"><?php echo $query3["ADSOYAD"]; ?></h1>
                 </div>
             </div>
             <hr>
@@ -21,7 +21,7 @@
                 <li><a href="egitmenler.php"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Eğitmen Yönetimi </a></li>
                 <li><a href="egitimler.php"><i class="fa fa-play" aria-hidden="true"></i>Eğitim Yönetimi </a></li>
                 <li><a href="ogrenciler.php"><i class="fa fa-users" aria-hidden="true"></i>Öğrenci Yönetimi </a></li>
-                <li><a href="kategoriler.php"><i class="fa fa-list-alt" aria-hidden="true"></i>Eğitim Kategorileri </a></li>
+                <!--<li><a href="kategoriler.php"><i class="fa fa-list-alt" aria-hidden="true"></i>Eğitim Kategorileri </a></li>-->
                 <li><a href="mesajlar.php"><i class="fa fa-comments-o" aria-hidden="true"></i>Mesajlar </a></li>
                  <li><a href="sayfalar.php"><i class="fa fa-file" aria-hidden="true"></i>Sayfalar </a></li>
                 <li><a href="#apps" aria-expanded="false" data-toggle="collapse"><i class="fa fa-cog" aria-hidden="true"></i>Site Yönetimi </a>

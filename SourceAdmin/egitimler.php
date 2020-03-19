@@ -19,67 +19,47 @@
            <div class="content chart-cont">  
             <div class="row">
             	<h3>Eğitimler | 
-            		<a href="egitim-ekle.php"><button class="btn btn-success btn-sm" type="button">Eğitim Ekle</button></a>
+            		<!--<a href="egitim-ekle.php"><button class="btn btn-success btn-sm" type="button">Eğitim Ekle</button></a>-->
             	</h3>
                 <table class="table table-hover">
                   <thead>
                     <tr class="bg-info text-white">
                       <th>ID</th>
-                      <th>Adı Soyadı</th>
-                      <th>Kullanıcı Adı</th>
-                      <th>Mail Adresi</th>
+                      <th>Başlık</th>
+                      <th>Açıklama</th>
                       <th>Kategori</th>
+                      <th>Fiyat</th>
                       <th>İşlemler</th>
                     </tr>
                   </thead>
                   <tbody>
+
+                     <?php 
+                  $egitimler = $db->query("SELECT * FROM egitimler", PDO::FETCH_ASSOC);
+                    if ( $egitimler->rowCount() ){
+                      foreach( $egitimler as $egitim ){
+                ?>
+
+
                     <tr>
-                      <th scope="row">1</th>
-                      <td>Özgün ATİK</td>
-                      <td>@ozgunatik</td>
-                      <td>ozgunatik97@gmail.com</td>
-                      <td>Yazılım</td>
+                      <th scope="row"><?php echo $egitim["ID"]; ?></th>
+                      <td><?php echo $egitim["BASLIK"]; ?></td>
+                      <td><?php echo substr($egitim["ACIKLAMA"], 0,70); ?>...</td>
+                      <td><?php echo $egitim["KATEGORI"]; ?></td>
+                      <td><?php echo $egitim["FIYAT"]; ?> TL</td>
                       <td>
                       	<a href="#"><button class="btn btn-primary btn-sm" type="button">Düzenle</button></a>
                       	<a href="#"><button class="btn btn-danger btn-sm" type="button">Sil</button></a>
                       </td>
                     </tr>
 
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Barış BADEMCİ</td>
-                      <td>@barisbademci</td>
-                      <td>barisbdi@gmail.com</td>
-                      <td>Muhasebe</td>
-                      <td>
-                      	<a href="#"><button class="btn btn-primary btn-sm" type="button">Düzenle</button></a>
-                      	<a href="#"><button class="btn btn-danger btn-sm" type="button">Sil</button></a>
-                      </td>
-                    </tr>
+                  <?php } } ?>
 
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Hasan BULUT</td>
-                      <td>@hasanbulut</td>
-                      <td>hasanbulut@gmail.com</td>
-                      <td>İşletme</td>
-                      <td>
-                      	<a href="#"><button class="btn btn-primary btn-sm" type="button">Düzenle</button></a>
-                      	<a href="#"><button class="btn btn-danger btn-sm" type="button">Sil</button></a>
-                      </td>
-                    </tr>
+                   
 
-                    <tr>
-                      <th scope="row">4</th>
-                      <td>Ulaş NAYAN</td>
-                      <td>@ulasnayan</td>
-                      <td>ulasnayan@gmail.com</td>
-                      <td>Ekonomi</td>
-                      <td>
-                      	<a href="#"><button class="btn btn-primary btn-sm" type="button">Düzenle</button></a>
-                      	<a href="#"><button class="btn btn-danger btn-sm" type="button">Sil</button></a>
-                      </td>
-                    </tr>
+                   
+
+                
                  
                    
                   </tbody>
