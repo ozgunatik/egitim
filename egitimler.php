@@ -56,7 +56,7 @@
                   ?>
 
                   <li>
-                    <img class="img-fluid" src="<?php echo $kurslar["LOGO"]; ?>" alt="">
+                    <img class="img-fluid" src="nedmin/<?php echo $kurslar["LOGO"]; ?>" alt="">
                     <h6><?php echo $kurslar["BASLIK"]; ?></h6>
                     <p><?php echo $kurslar["FIYAT"]; ?> TL</p>
                   </li>             
@@ -80,7 +80,7 @@
               
                 <div class="col-lg-4 col-md-6 mb-4">
                   <div class="card ">
-                    <a href="#"><img class="card-img-top" width="250" height="250" src="<?php echo $row["LOGO"]; ?>" alt=""></a>
+                    <a href="#"><img class="card-img-top" width="250" height="250" src="nedmin/<?php echo $row["LOGO"]; ?>" alt=""></a>
                     <div class="card-body text-center">
                       <div class="card-title">
                         <a href="#"><?php echo $row["BASLIK"]; ?></a>

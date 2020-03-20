@@ -39,7 +39,7 @@ $query2 = $db->query("SELECT * FROM egitimler WHERE EGITIM_ID='{$gelenVeri}'")->
               <div class="preview col-md-6">
                 
                 <div class="preview-pic tab-content">
-                  <div class="tab-pane active" id="pic-1"><img width="500" height="500" src="<?php echo $query2["LOGO"]; ?>" /></div>
+                  <div class="tab-pane active" id="pic-1"><img width="500" height="500" src="nedmin/<?php echo $query2["LOGO"]; ?>" /></div>
                   <div class="tab-pane" id="pic-2"><img src="img/shop/shop-item-3.jpg" /></div>
                   <div class="tab-pane" id="pic-3"><img src="img/shop/shop-item-4.jpg" /></div>
                   <div class="tab-pane" id="pic-4"><img src="img/shop/shop-item-5.jpg" /></div>

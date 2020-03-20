@@ -80,8 +80,7 @@ $query1 = $db->query("SELECT * FROM USERS WHERE EMAIL='{$email}'")->fetch(PDO::F
 
 	   	  <li class="nav-item ml-md-3"></li>
 	       <a class="nav-link" href="login.php">Eğitim Al</a>
-	       <li class="nav-item ml-md-3"></li>
-	       <a class="nav-link" href="egitimver.php">Eğitim Ver</a>
+	       
 	        <li class="nav-item ml-md-3"></li>
  			<li class="nav-item active">
 	        <a class="nav-link" href="register.php">Kaydol</a>

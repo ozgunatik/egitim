@@ -35,6 +35,8 @@ $del3 = $db->prepare('SELECT BASLIK FROM egitimler GROUP BY BASLIK');
 $del3->execute();
 $count3 = $del3->rowCount();
 
+$query1 = $db->query("SELECT * FROM USERS WHERE EMAIL='{$email}'")->fetch(PDO::FETCH_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -62,6 +64,8 @@ $count3 = $del3->rowCount();
     <link rel="stylesheet" href="css/style.css">
      <!-- Core stylesheets -->
     <link rel="stylesheet" href="css/form.css">
+    <!-- Core stylesheets -->
+    <link rel="stylesheet" href="css/profile.css">
 
 </head>
 
@@ -74,9 +78,7 @@ $count3 = $del3->rowCount();
         <nav class="navbar navbar-expand-lg ">
             <div class="search-box">
                 <button class="dismiss"><i class="icon-close"></i></button>
-                <form id="searchForm" action="#" role="search">
-                    <input type="search" placeholder="Search Now" class="form-control">
-                </form>
+               
             </div>
             <div class="container-fluid ">
                 <div class="navbar-holder d-flex align-items-center justify-content-between">
@@ -98,11 +100,11 @@ $count3 = $del3->rowCount();
                     <!-- Search-->
                     
                    
-                    <li class="nav-item dropdown"><a id="profile" class="nav-link logout" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle" style="height: 30px; width: 30px;"></a>
+                    <li class="nav-item dropdown"><a id="profile" class="nav-link logout" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="https://avatars2.githubusercontent.com/u/25088178?s=460&u=6485e10dea8d66085191716f838cf4b4ab4a9ff8&v=4" alt="..." class="img-fluid rounded-circle" style="height: 30px; width: 30px;"></a>
                         <ul aria-labelledby="profile" class="dropdown-menu profile">
                             <li>
                                 <a rel="nofollow" href="#" class="dropdown-item d-flex">
-                                    <div class="msg-profile"> <img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                                    <div class="msg-profile"> <img src="https://avatars2.githubusercontent.com/u/25088178?s=460&u=6485e10dea8d66085191716f838cf4b4ab4a9ff8&v=4" alt="..." class="img-fluid rounded-circle"></div>
                                     <div class="msg-body">
                                         <h3 class="h5"><?php echo $query3["ADSOYAD"]; ?> </h3><span><?php echo $query3["EMAIL"]; ?> </span>
                                     </div>
@@ -110,29 +112,22 @@ $count3 = $del3->rowCount();
                                 <hr>
                             </li>
                             <li>
-                                <a rel="nofollow" href="profile.html" class="dropdown-item">
+                                <a rel="nofollow" href="profil.php" class="dropdown-item">
                                     <div class="notification">
                                         <div class="notification-content"><i class="fa fa-user "></i>Profil</div>
                                     </div>
                                 </a>
                             </li>
                             <li>
-                                <a rel="nofollow" href="profile.html" class="dropdown-item">
+                                <a rel="nofollow" href="mesajlar.php" class="dropdown-item">
                                     <div class="notification">
                                         <div class="notification-content"><i class="fa fa-envelope-o"></i>Gelen Kutusu</div> 
                                     </div>
                                 </a>
                             </li>
+                           
                             <li>
-                                <a rel="nofollow" href="profile.html" class="dropdown-item">
-                                    <div class="notification">
-                                        <div class="notification-content"><i class="fa fa-cog"></i>Ayarlar</div>
-                                    </div>
-                                </a>
-                                <hr>
-                            </li>
-                            <li>
-                                <a rel="nofollow" href="profile.html" class="dropdown-item">
+                                <a rel="nofollow" href="../logout.php" class="dropdown-item">
                                     <div class="notification">
                                         <div class="notification-content"><i class="fa fa-power-off"></i>Güvenli Çıkış</div>
                                     </div>
