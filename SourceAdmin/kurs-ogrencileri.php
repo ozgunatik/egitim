@@ -1,12 +1,4 @@
-<?php include 'header.php';  
-
-
-
-
-
-?>
-
-
+<?php include 'header.php';  ?>
 
 <!--====================================================
                         PAGE CONTENT
@@ -17,40 +9,41 @@
 
         <div class="content-inner">
            <div class="content chart-cont">  
+            <!--***** CONTENT *****-->     
             <div class="row">
-               <h3>Mesajlar | <small><a href="mesaj-olustur.php"><button class="btn btn-success">Yeni Mesaj</button></a></small></h3>
+              <h3>Öğrenciler | </h3>
                 <table class="table table-hover">
-                   <thead>
+                  <thead>
                     <tr class="bg-info text-white">
-                      <th>#</th>
-                      <th>Kimden</th>
-                      <th>Başlık</th>
-                      <th>Mesaj</th>
-                      <th>İşlem</th>
+                      <th>ID</th>
+                      <th>Adı Soyadı</th>
+                      <th>Telefon</th>
+                      <th>Mail Adresi</th>
+                      <th>İşlemler</th>
                     </tr>
                   </thead>
                   <tbody>
 
-                      <?php 
-
-           $query4 = $db->query("SELECT * FROM mesajlar WHERE ALICI_MAIL='{$email}'", PDO::FETCH_ASSOC);
-            if ( $query4->rowCount() ){
-              foreach( $query4 as $row ){
-            ?>
-
+                <?php 
+                  $ogrenciler = $db->query("SELECT * FROM users WHERE YETKI='3'", PDO::FETCH_ASSOC);
+                    if ( $ogrenciler->rowCount() ){
+                      foreach( $ogrenciler as $ogrenci ){
+                ?>
 
                     <tr>
-                      <th scope="row"><?php echo $row["ID"] ?></th>
-                      <td><?php echo $row["GONDEREN_MAIL"];  ?></td>
-                      
-                     
-                      <td><?php echo $row["BASLIK"];  ?></td>
-                      <td><?php echo $row["MESAJ"];  ?></td>
-                      <td><button><a href="mesaj-olustur.php?gonderen=<?php echo $row["GONDEREN_MAIL"]; ?>">Cevapla</a></button></td>
+                      <th scope="row"><?php echo $ogrenci["ID"]; ?></th>
+                      <td><?php echo $ogrenci["ADSOYAD"]; ?></td>
+                      <td><?php echo $ogrenci["TEL"]; ?></td>
+                      <td><?php echo $ogrenci["EMAIL"]; ?></td>
+                      <td>
+                        <a href="ogrenci-ekle.php?id=<?php echo $ogrenci["ID"]; ?>"><button class="btn btn-primary btn-sm" type="button">Düzenle</button></a>
+                        <a href="ogrenci-sil.php?id=<?php echo $ogrenci["ID"]; ?>"><button class="btn btn-danger btn-sm" type="button">Sil</button></a>
+                      </td>
                     </tr>
-                   
-                   <?php } } ?>
 
+                  <?php } } ?>
+
+                   
                    
 
                 

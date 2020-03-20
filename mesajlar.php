@@ -1,4 +1,7 @@
-<?php include 'header.php';  
+<?php
+include 'header.php';
+
+
 
 
 
@@ -6,21 +9,15 @@
 
 ?>
 
-
-
-<!--====================================================
-                        PAGE CONTENT
-======================================================-->
-    <div class="page-content d-flex align-items-stretch">
-
-       <?php include 'sidebar.php'; ?>
-
-        <div class="content-inner">
-           <div class="content chart-cont">  
+<!--***** CONTENT *****-->   
+      <div class="container">  
+                <div class="card-header">
+                          <br>
+                            <h3><i class="fa fa-envelope"></i> Mesajlar | <small><a href="mesaj-olustur.php"><button class="btn btn-success">Yeni Mesaj</button></a></small></h3>
+                        </div>
             <div class="row">
-               <h3>Mesajlar | <small><a href="mesaj-olustur.php"><button class="btn btn-success">Yeni Mesaj</button></a></small></h3>
                 <table class="table table-hover">
-                   <thead>
+                  <thead>
                     <tr class="bg-info text-white">
                       <th>#</th>
                       <th>Kimden</th>
@@ -31,7 +28,8 @@
                   </thead>
                   <tbody>
 
-                      <?php 
+
+                     <?php 
 
            $query4 = $db->query("SELECT * FROM mesajlar WHERE ALICI_MAIL='{$email}'", PDO::FETCH_ASSOC);
             if ( $query4->rowCount() ){
@@ -50,35 +48,21 @@
                     </tr>
                    
                    <?php } } ?>
-
-                   
-
-                
-                 
-                   
                   </tbody>
                 </table>
             </div> 
-
-        </div>
+            </div> 
 
         </div>
     </div> 
 
 
-  <!--Global Javascript -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper/popper.min.js"></script>
-    <script src="js/tether.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.cookie.js"></script>
-    <script src="js/jquery.validate.min.js"></script> 
-    <script src="js/chart.min.js"></script> 
-    <script src="js/front.js"></script> 
-    
-    <!--Core Javascript -->
-    <script src="js/mychart.js"></script>
-</body>
 
-</html>
-    
+
+
+
+
+
+    <?php
+include 'footer.php';
+?>
