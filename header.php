@@ -17,8 +17,8 @@ if (isset($_SESSION['email'])) {
 	$email = $_SESSION['email'];
 }
 
-$query = $db->query("SELECT * FROM SITE_AYAR")->fetch(PDO::FETCH_ASSOC);
-$query1 = $db->query("SELECT * FROM USERS WHERE EMAIL='{$email}'")->fetch(PDO::FETCH_ASSOC);
+$query = $db->query("SELECT * FROM siteayar")->fetch(PDO::FETCH_ASSOC);
+$query1 = $db->query("SELECT * FROM users WHERE EMAIL='{$email}'")->fetch(PDO::FETCH_ASSOC);
 
 
 

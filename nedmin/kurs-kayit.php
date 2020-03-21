@@ -7,10 +7,11 @@ include 'baglan.php';
 
 $gelen = $_GET["gelen"];
 $user = $_GET["user"];
- 
 
-if (isset($gelen)) {
-	
+if ($user=="") {
+	header("Location:../404.html");
+}
+elseif (isset($gelen)) {	
 	try {
 		
 		$query = $db->prepare("INSERT INTO kurslar SET
@@ -20,8 +21,7 @@ if (isset($gelen)) {
 		$insert = $query->execute(array("$user","$gelen"));
 			if ( $insert ){
     			$last_id = $db->lastInsertId();
-    			echo "insert işlemi başarılı!";
-}
+    			echo "insert işlemi başarılı!";}
 
 		} 
 		catch (Exception $e) {
@@ -30,6 +30,5 @@ if (isset($gelen)) {
 
 		}	
 }
-
 
  ?>
