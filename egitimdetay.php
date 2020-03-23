@@ -2,7 +2,7 @@
 include 'header.php';
 $gelenVeri = $_GET['egid'];
 
-$query2 = $db->query("SELECT * FROM egitimler WHERE EGITIM_ID='{$gelenVeri}'")->fetch(PDO::FETCH_ASSOC);
+$query2 = $db->query("SELECT * FROM egitimler WHERE ID='{$gelenVeri}'")->fetch(PDO::FETCH_ASSOC);
 
 
 ?>

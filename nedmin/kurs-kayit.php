@@ -21,9 +21,10 @@ elseif (isset($gelen)) {
 		$insert = $query->execute(array("$user","$gelen"));
 			if ( $insert ){
     			$last_id = $db->lastInsertId();
-    			echo "insert işlemi başarılı!";}
+    			header("Location:../basarili.php");
 
 		} 
+	}
 		catch (Exception $e) {
 		
 		echo "Olmadı";

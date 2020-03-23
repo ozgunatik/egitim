@@ -3,13 +3,6 @@ include 'header.php';
 
 
 
-
-
-
-
-
-
-
 ?>
 
 <!--***** CONTENT *****-->   
@@ -25,6 +18,7 @@ include 'header.php';
                       <th>#</th>
                       <th>Ders Adı</th>
                       <th>Ödenen Ücret</th>
+                      <th>İşlemler</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -32,7 +26,7 @@ include 'header.php';
 
                      <?php 
 
-           $query4 = $db->query("SELECT * FROM egitimler INNER JOIN kurslar ON egitimler.EGITIM_ID = kurslar.EGITIM_ID WHERE kurslar.OGRENCI_MAIL = '{$email}'", PDO::FETCH_ASSOC);
+           $query4 = $db->query("SELECT egitimler.ID,egitimler.EGITIM_ID,egitimler.BASLIK,egitimler.FIYAT FROM egitimler INNER JOIN kurslar ON egitimler.EGITIM_ID = kurslar.EGITIM_ID WHERE kurslar.OGRENCI_MAIL = '{$email}'", PDO::FETCH_ASSOC);
             if ( $query4->rowCount() ){
               foreach( $query4 as $row ){
             ?>
@@ -44,6 +38,10 @@ include 'header.php';
                       
                      
                       <td><?php echo $row["FIYAT"];  ?> TL</td>
+                      <td>
+                        <a href="egitimdetay.php?egid=<?php echo $row["ID"]; ?>"><button class="btn btn-primary btn-sm" type="button">Kursu İncele</button></a>
+                        
+                      </td>
                     </tr>
                    
                    <?php } } ?>

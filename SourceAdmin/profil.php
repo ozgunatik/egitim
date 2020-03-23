@@ -42,9 +42,7 @@
                               <li class="nav-item ">
                                 <a class="nav-link active" href="#profile" role="tab" data-toggle="tab"><span><i class="fa fa-user"></i></span> Profil</a>
                               </li>
-                              <li class="nav-item">
-                                <a class="nav-link" href="#buzz" role="tab" data-toggle="tab"><span><i class="fa fa-inbox"></i></span> Mesajlar</a>
-                              </li>
+                              
                              
                             </ul>
 

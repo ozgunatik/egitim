@@ -29,12 +29,13 @@ if (isset($_GET["id"])) {
                             <h3><i class="fa fa-user"></i> Öğrenci Bilgileri</h3>
                         </div>
                         <br>
-                        <form>
+                        <form action="../nedmin/ogrenciguncelle.php" method="POST">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="name">Ad Soyad</label>
-                                        <input type="text" class="form-control" name="name" value="<?php 
+                                        <input type="hidden" class="form-control" name="id" value="<?php echo $query1["ID"] ?>">
+                                        <input type="text" class="form-control" name="adsoyad" value="<?php 
                                             if (isset($_GET["id"])) {
    
                                             echo $query1["ADSOYAD"];
@@ -57,7 +58,7 @@ if (isset($_GET["id"])) {
                                 <div class="col-md-6"> 
                                     <div class="form-group">
                                         <label for="cont-number">Şifre</label>
-                                        <input type="text" class="form-control" name="username" value="<?php 
+                                        <input type="text" class="form-control" name="sifre" value="<?php 
                                             if (isset($_GET["id"])) {
    
                                             echo "**********";
@@ -180,7 +181,7 @@ if (isset($_GET["id"])) {
 
                             if (isset($_GET["id"])) {
    ?>
-  <button type="submit" class="btn btn-general btn-blue mr-2">Güncelle</button>  
+  <button type="submit" name="ogrenciguncelle" class="btn btn-general btn-blue mr-2">Güncelle</button>  
 
                           <?php } else {  ?>  
 

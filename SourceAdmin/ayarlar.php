@@ -2,7 +2,7 @@
 
 
    
-   $query1 = $db->query("SELECT * FROM site_ayar WHERE ID=1")->fetch(PDO::FETCH_ASSOC);
+   $query1 = $db->query("SELECT * FROM siteayar WHERE ID=1")->fetch(PDO::FETCH_ASSOC);
 
 
 
@@ -28,12 +28,12 @@
                             <h3>Header Ayarları [Üst Menü]</h3>
                         </div>
                         <br>
-                        <form>
+                        <form action="../nedmin/ayarguncelle.php" method="POST">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="name">Logo</label>
-                                        <input type="text" class="form-control" name="name" value="<?php 
+                                        <input type="text" class="form-control" name="logo" value="<?php 
                                             
    
                                             echo $query1["LOGO"];
@@ -42,7 +42,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="email">ACIKLAMA</label>
-                                        <input type="email" class="form-control" name="email" value="<?php 
+                                        <input type="text" class="form-control" name="aciklama" value="<?php 
                                           
    
                                             echo $query1["ACIKLAMA"];
@@ -56,7 +56,7 @@
                                 <div class="col-md-6"> 
                                     <div class="form-group">
                                         <label for="cont-number">Başlık</label>
-                                        <input type="text" class="form-control" name="username" value="<?php 
+                                        <input type="text" class="form-control" name="baslik" value="<?php 
                                          
    
                                             echo $query1["BASLIK"];
@@ -76,7 +76,7 @@
                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="name">Adres Başlık 1</label>
-                                        <input type="text" class="form-control" name="name" value="<?php 
+                                        <input type="text" class="form-control" name="adres1" value="<?php 
                                             
    
                                             echo $query1["ILET_BASLIK1"];
@@ -85,7 +85,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Adres Başlık 2</label>
-                                        <input type="email" class="form-control" name="email" value="<?php 
+                                        <input type="text" class="form-control" name="adres2" value="<?php 
                                           
    
                                             echo $query1["ILET_BASLIK2"];
@@ -94,7 +94,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Adres Başlık 3</label>
-                                        <input type="email" class="form-control" name="email" value="<?php 
+                                        <input type="text" class="form-control" name="adres3" value="<?php 
                                           
    
                                             echo $query1["ILET_BASLIK3"];
@@ -108,7 +108,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="name">Adres Tel 1</label>
-                                        <input type="text" class="form-control" name="name" value="<?php 
+                                        <input type="text" class="form-control" name="tel1" value="<?php 
                                             
    
                                             echo $query1["ILET_TEL1"];
@@ -117,7 +117,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Adres Tel 2</label>
-                                        <input type="email" class="form-control" name="email" value="<?php 
+                                        <input type="text" class="form-control" name="tel2" value="<?php 
                                           
    
                                             echo $query1["ILET_TEL2"];
@@ -127,7 +127,7 @@
 
                                     <div class="form-group">
                                         <label for="email">Adres Tel 3</label>
-                                        <input type="email" class="form-control" name="email" value="<?php 
+                                        <input type="text" class="form-control" name="tel3" value="<?php 
                                           
    
                                             echo $query1["ILET_TEL3"];
@@ -150,7 +150,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="name">LinkedIn</label>
-                                        <input type="text" class="form-control" name="universite" value="<?php 
+                                        <input type="text" class="form-control" name="link" value="<?php 
                                            
    
                                             echo $query1["LINKEDIN"];
@@ -159,7 +159,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="pro-qu">Twitter</label>
-                                        <input type="text" class="form-control" value="<?php 
+                                        <input type="text" class="form-control" name="twitter" value="<?php 
                                             
    
                                             echo $query1["TWITTER"];
@@ -170,7 +170,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="name">Facebook</label>
-                                        <input type="text" class="form-control" name="universite" value="<?php 
+                                        <input type="text" class="form-control" name="facebook" value="<?php 
                                             
    
                                             echo $query1["FACEBOOK"];
@@ -179,7 +179,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="pro-qu">Instagram</label>
-                                        <input type="text" class="form-control" value="<?php 
+                                        <input type="text" class="form-control" name="insta" value="<?php 
                                            
    
                                             echo $query1["INSTAGRAM"];
@@ -198,7 +198,7 @@
 
                           <?php } else {  ?>  
 
-<button type="submit" class="btn btn-general btn-blue mr-2">Güncelle</button>  
+<button type="submit" class="btn btn-general btn-blue mr-2" name="ayarguncelle">Güncelle</button>  
 
 <?php } ?>
                            

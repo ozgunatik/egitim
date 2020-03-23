@@ -58,7 +58,7 @@ if (isset($_POST["egitimver"])) {
         $insert = $query->execute(array($egitmenid,$egitimid,"$baslik","$kategori","$detay","$aciklama","$fiyat","$yeni_ad"));
             if ( $insert ){
                 $last_id = $db->lastInsertId();
-                echo "insert işlemi başarılı!";
+               header("Location:../basarili.php");
                
         } 
     }

@@ -68,7 +68,9 @@
                       <th>Adı Soyadı</th>
                       <th>Telefon</th>
                       <th>Mail Adresi</th>
+                      <?php if($yetki != "4") { ?>
                       <th>İşlemler</th>
+                    <?php } ?>
                     </tr>
                   </thead>
                   <tbody>
@@ -84,10 +86,15 @@
                       <td><?php echo $ogrenci["ADSOYAD"]; ?></td>
                       <td><?php echo $ogrenci["TEL"]; ?></td>
                       <td><?php echo $ogrenci["EMAIL"]; ?></td>
+                      <?php if ($yetki != "4") {
+                        # code...
+                     ?>
                       <td>
                       	<a href="ogrenci-ekle.php?id=<?php echo $ogrenci["ID"]; ?>"><button class="btn btn-primary btn-sm" type="button">Düzenle</button></a>
                       	<a href="#"><button class="btn btn-danger btn-sm" type="button">Sil</button></a>
                       </td>
+
+                    <?php  } ?>
                     </tr>
 
                   <?php } } ?>

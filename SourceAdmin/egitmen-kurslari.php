@@ -48,8 +48,8 @@ $query5 = $db->query("SELECT ID FROM users WHERE EMAIL='{$email}'")->fetch(PDO::
                       <td><?php echo $egitim["KATEGORI"]; ?></td>
                       <td><?php echo $egitim["FIYAT"]; ?> TL</td>
                       <td>
-                      	<a href="#"><button class="btn btn-primary btn-sm" type="button">Düzenle</button></a>
-                      	<a href="#"><button class="btn btn-danger btn-sm" type="button">Sil</button></a>
+                      	<a href="../egitimdetay.php?egid=<?php echo $egitim["ID"]; ?>"><button class="btn btn-primary btn-sm" type="button">Kursu İncele</button></a>
+                      	
                       </td>
                     </tr>
 
